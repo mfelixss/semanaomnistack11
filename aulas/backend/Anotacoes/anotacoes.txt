@@ -1,0 +1,60 @@
+/*
+*   Rotas / Recursos
+*/
+
+/*
+*   Metodos HTTP:
+*
+*   GET: Buscar/listar uma informação do back-end
+*   POST: Criar uma informação no back-end
+*   PUT: Alterar uma informação no back-end
+*   DELETE: Deletar uma informação no back-end  
+*/
+
+/**
+ *  Tipos de parâmetros:
+ * 
+ *  Query Params: Parâmetros nomeados enviados na rota após "?" (Filtros, paginação)
+ *  Route Params: Parâmetros utilizados para identificar recursos
+ *  Resquest Body: Corpo da requisição, utilizado para criar ou alterar recursos
+ *
+ */
+
+/**
+ *  SQL: MySQL, SQLite, PostgreeSQL, Oracle, Microsoft SQL Server
+ *  NoSQL: MongoDB, CouchDB, etc. 
+ */
+
+ /**
+  * Driver: SELECT * FROM users
+  *     Cada "linguagem" pode ter suas variações dessa abordagem
+  * Query Builder: table('user').select('*').where()
+  *     Essa abordagem de JS tem a vantagem de poder ser usada em qualquer "linguagem" SQL
+  */
+
+
+  /*
+    Entidades:
+        - ONG
+        - Caso (incident)
+
+    Funcionalidades:
+        ONG:    
+            - Cadastro de ONG
+            - Login de ONG
+            - Logout de ONG
+            - Cadastrar novos casos
+            - Deletar casos
+            - Listar casos especificos de uma ONG
+            Mobile:
+                - Listar todos os casos
+                - Entrar em contato com a ONG   
+
+  */
+
+  const knex = require('knex');
+const configuration = require('../../knexfile');
+
+const connection = knex(configuration.development);
+
+module.exports = connection;
